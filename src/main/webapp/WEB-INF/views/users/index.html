@@ -5,7 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-qw
 <div th:each="user: ${people}">
     <a th:href="@{/users/{id} (id=${user.getId()})}" th:text="${user.getName()}"/>
 </div>
