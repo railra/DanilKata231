@@ -27,4 +27,21 @@ public class UserController {
         return "users/index";
     }
 
+    @PostMapping()
+    public String create(@ModelAttribute("user") User user){
+        peopleService.save(user);
+        return "redirect:/users";
+    }
+
+    @GetMapping("/{id}")
+    public String findOne(@PathVariable("id") int id, Model model){
+        model.addAttribute("user", peopleService.findOne(id));
+        return "users/show";
+    }
+
+    @GetMapping("/new")
+    public String newUser(@ModelAttribute("user") User user){
+        return "users/new";
+    }
+
 }

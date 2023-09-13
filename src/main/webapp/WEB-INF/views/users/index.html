@@ -7,7 +7,12 @@
 <body>
 qw
 <div th:each="user: ${people}">
-    <p th:text="${user.getName()}"/>
+    <a th:href="@{/users/{id} (id=${user.getId()})}" th:text="${user.getName()}"/>
 </div>
+<br/>
+<a th:href="@{/users/new}" >Create new user</a>
+<hr/>
+
+
 </body>
 </html>
